@@ -3,8 +3,7 @@
  */
 const mongoose = require("mongoose");
 const conString = "mongodb://localhost:27017/customerDb";
-const conString =
-  "mongodb+srv://admin:Admin678@cluster0-iqrdy.mongodb.net/test?retryWrites=true&w=majority";
+// const conString =  "mongodb+srv://admin:Admin678@cluster0-iqrdy.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(
   conString,
   { useNewUrlParser: true, useUnifiedTopology: true },
