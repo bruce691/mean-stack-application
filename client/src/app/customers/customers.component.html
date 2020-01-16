@@ -6,6 +6,7 @@
       <th>Gender</th>
       <th>Age</th>
       <th>Email</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody id="customers">
@@ -15,6 +16,10 @@
       <td>{{ customer.gender }}</td>
       <td>{{ customer.age }}</td>
       <td>{{ customer.email }}</td>
+      <td>
+        <a href="#updateCustomerModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+        <a href="#deleteCustomerModal" (click)="displayDeleteForm(customer._id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+    </td>
     </tr>
   </tbody>
 </table>
@@ -22,13 +27,17 @@
   <div id="counter" class="hint-text"></div>
 </div>
 <!-- Edit Modal HTML -->
-<div id="editBookModal" class="modal fade">
+<div id="updateCustomerModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form action="javascript:void(0);" onsubmit="updateBookItem()">
+      <form
+        name="updateCustomerForm"
+        #updateCustomerForm="ngForm"
+        (ngSubmit)="updateCustomer(updateCustomerForm)"
+      >
         <input type="hidden" id="edit-id" />
         <div class="modal-header">
-          <h4 class="modal-title">Edit Book</h4>
+          <h4 class="modal-title">Edit Customer</h4>
           <button
             type="button"
             class="close"
@@ -40,51 +49,61 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label>Title</label>
+            <label>First Name</label>
             <input
               type="text"
-              id="edit-title"
-              placeholder="Enter Book Title"
+              name="firstname"
+              #firstname="ngModel"
+              [(ngModel)]="customerDetail.first_name"
+              placeholder="Enter First Name"
               class="form-control"
               required
             />
           </div>
           <div class="form-group">
-            <label>Author</label>
+            <label>Last Name</label>
             <input
               type="text"
-              id="edit-author"
-              placeholder="Enter Book Author"
+              name="lastname"
+              #lastname="ngModel"
+              [(ngModel)]="customerDetail.last_name"
+              placeholder="Enter Last Name"
               class="form-control"
               required
             />
           </div>
           <div class="form-group">
-            <label>Publisher</label>
+            <label>Gender</label>
             <input
               type="text"
-              id="edit-publisher"
-              placeholder="Enter Book Publisher"
+              name="gender"
+              #gender="ngModel"
+              [(ngModel)]="customerDetail.gender"
+              placeholder="Enter Gender"
               class="form-control"
               required
             />
           </div>
           <div class="form-group">
-            <label>Genre</label>
+            <label>Age</label>
             <input
               type="text"
-              id="edit-genre"
-              placeholder="Enter Book Genre"
+              name="age"
+              #age="ngModel"
+              [(ngModel)]="customerDetail.age"
+              placeholder="Enter Age"
               class="form-control"
               required
             />
           </div>
           <div class="form-group">
-            <label>Price</label>
+            <label>Email</label>
             <input
               type="text"
-              id="edit-price"
-              placeholder="Enter Book Price"
+              name="email"
+              #email="ngModel"
+              [(ngModel)]="customerDetail.email"
+              placeholder="Enter Email"
               class="form-control"
               required
             />
@@ -104,13 +123,13 @@
   </div>
 </div>
 <!-- Delete Modal HTML -->
-<div id="deleteBookModal" class="modal fade">
+<div id="deleteCustomerModal" class="modal fade">
   <input type="hidden" id="delete-id" />
   <div class="modal-dialog">
     <div class="modal-content">
-      <form action="javascript:void(0);" onsubmit="deleteBookItem()">
+      <form  (submit)="deleteCustomer()">
         <div class="modal-header">
-          <h4 class="modal-title">Delete Book</h4>
+          <h4 class="modal-title">Delete Customer</h4>
           <button
             type="button"
             class="close"
@@ -121,7 +140,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Are you sure you want to delete this Record?</p>
+          <p>Are you sure you want to delete this Customer?</p>
           <p class="text-warning">
             <small>This action cannot be undone.</small>
           </p>

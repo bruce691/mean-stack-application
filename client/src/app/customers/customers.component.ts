@@ -8,7 +8,17 @@ import { Customer } from "../customer.model";
   styleUrls: ["./customers.component.css"]
 })
 export class CustomersComponent implements OnInit {
+  deletedCustomerId: string;
   customers: Customer[];
+  customerDetail: Customer = {
+    _id: "",
+    first_name: "",
+    last_name: "",
+    gender: "",
+    age: null,
+    email: ""
+  };
+
   constructor(private customerService: CustomerService) {}
 
   ngOnInit() {
@@ -16,9 +26,26 @@ export class CustomersComponent implements OnInit {
   }
 
   GetCustomersFromService() {
-    //this.customers = this.customerService.GetCustomerList();
     this.customerService.GetCustomerList().subscribe(resp => {
-       this.customers = resp as Customer[];
-     });
+      this.customers = resp as Customer[];
+    });
+  }
+
+  updateCustomer(updateCustomerForm) {
+    console.log(updateCustomerForm.value);
+  }
+
+  deleteCustomer() {
+    console.log("deleting...");
+    this.customerService
+      .DeleteCustomer(this.deletedCustomerId)
+      .subscribe(resp => {
+        console.log("customer deleted..");
+      });
+  }
+
+  displayDeleteForm(custid) {
+    console.log(`deleting...${custid}`);
+    this.deletedCustomerId = custid;
   }
 }
