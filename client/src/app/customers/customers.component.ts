@@ -9,6 +9,8 @@ import { Customer } from "../customer.model";
 })
 export class CustomersComponent implements OnInit {
   deletedCustomerId: string;
+  //selectedCustomer: Customer;
+
   customers: Customer[];
   customerDetail: Customer = {
     _id: "",
@@ -33,14 +35,27 @@ export class CustomersComponent implements OnInit {
 
   updateCustomer(updateCustomerForm) {
     console.log(updateCustomerForm.value);
+    this.customerService
+      .PutCustomer(updateCustomerForm.value)
+      .subscribe(resp => {
+        this.GetCustomersFromService();
+      });
+  }
+
+  displayUpdateForm(custid) {
+    console.log("updating...");
+    this.customerDetail = this.customers.find(c => {
+      return c._id === custid;
+    });
+    console.log(this.customerDetail);
   }
 
   deleteCustomer() {
-    console.log("deleting...");
     this.customerService
       .DeleteCustomer(this.deletedCustomerId)
       .subscribe(resp => {
         console.log("customer deleted..");
+        this.GetCustomersFromService();
       });
   }
 

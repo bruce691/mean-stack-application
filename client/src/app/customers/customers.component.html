@@ -17,9 +17,25 @@
       <td>{{ customer.age }}</td>
       <td>{{ customer.email }}</td>
       <td>
-        <a href="#updateCustomerModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-        <a href="#deleteCustomerModal" (click)="displayDeleteForm(customer._id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-    </td>
+        <a
+          href="#updateCustomerModal"
+          (click)="displayUpdateForm(customer._id)"
+          class="edit"
+          data-toggle="modal"
+          ><i class="material-icons" data-toggle="tooltip" title="Edit"
+            >&#xE254;</i
+          ></a
+        >
+        <a
+          href="#deleteCustomerModal"
+          (click)="displayDeleteForm(customer._id)"
+          class="delete"
+          data-toggle="modal"
+          ><i class="material-icons" data-toggle="tooltip" title="Delete"
+            >&#xE872;</i
+          ></a
+        >
+      </td>
     </tr>
   </tbody>
 </table>
@@ -35,7 +51,6 @@
         #updateCustomerForm="ngForm"
         (ngSubmit)="updateCustomer(updateCustomerForm)"
       >
-        <input type="hidden" id="edit-id" />
         <div class="modal-header">
           <h4 class="modal-title">Edit Customer</h4>
           <button
@@ -48,12 +63,18 @@
           </button>
         </div>
         <div class="modal-body">
+          <input
+            type="hidden"
+            name="_id"
+            #_id="ngModel"
+            [(ngModel)]="customerDetail._id"
+          />
           <div class="form-group">
             <label>First Name</label>
             <input
               type="text"
-              name="firstname"
-              #firstname="ngModel"
+              name="first_name"
+              #first_name="ngModel"
               [(ngModel)]="customerDetail.first_name"
               placeholder="Enter First Name"
               class="form-control"
@@ -64,8 +85,8 @@
             <label>Last Name</label>
             <input
               type="text"
-              name="lastname"
-              #lastname="ngModel"
+              name="last_name"
+              #last_name="ngModel"
               [(ngModel)]="customerDetail.last_name"
               placeholder="Enter Last Name"
               class="form-control"
@@ -116,7 +137,12 @@
             data-dismiss="modal"
             value="Cancel"
           />
-          <input type="submit" class="btn btn-info" value="Save" />
+          <input
+            type="submit"
+            class="btn btn-info"
+            [disabled]="!updateCustomerForm.valid"
+            value="Save"
+          />
         </div>
       </form>
     </div>
@@ -127,7 +153,7 @@
   <input type="hidden" id="delete-id" />
   <div class="modal-dialog">
     <div class="modal-content">
-      <form  (submit)="deleteCustomer()">
+      <form (submit)="deleteCustomer()">
         <div class="modal-header">
           <h4 class="modal-title">Delete Customer</h4>
           <button
