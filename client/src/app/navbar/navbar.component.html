@@ -15,9 +15,9 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <form
-        name="addcustomerform"
+        name="addCustForm"
         #addCustomerForm="ngForm"
-        (ngSubmit)="addCustomer()"
+        (ngSubmit)="addCustomer(addCustomerForm)"
       >
         <div class="modal-header">
           <h4 class="modal-title">Add Customer</h4>
@@ -35,8 +35,8 @@
             <label>First Name</label>
             <input
               type="text"
-              name="firstname"
-              #firstname="ngModel"
+              name="first_name"
+              #first_name="ngModel"
               [(ngModel)]="customerDetail.first_name"
               placeholder="Enter First Name"
               class="form-control"
@@ -47,8 +47,8 @@
             <label>Last Name</label>
             <input
               type="text"
-              name="lastname"
-              #lastname="ngModel"
+              name="last_name"
+              #last_name="ngModel"
               [(ngModel)]="customerDetail.last_name"
               placeholder="Enter Last Name"
               class="form-control"
@@ -99,7 +99,7 @@
             data-dismiss="modal"
             value="Cancel"
           />
-          <input type="submit" class="btn btn-success" value="Add" />
+          <input type="submit" class="btn btn-success" [disabled]="!addCustomerForm.valid" value="Add" />
         </div>
       </form>
     </div>

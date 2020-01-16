@@ -13,15 +13,17 @@ export class NavbarComponent implements OnInit {
     first_name: "",
     last_name: "",
     gender: "",
-    age: 0,
+    age: null,
     email: ""
   };
 
-  constructor() {}
+  constructor(private customerService: CustomerService) {}
 
   ngOnInit() {}
 
-  addCustomer() {
-    console.log(this.customerDetail);
+  addCustomer(addCustomerForm) {
+    this.customerService
+      .PostCustomer(addCustomerForm.value)
+      .subscribe(resp => {});
   }
 }
