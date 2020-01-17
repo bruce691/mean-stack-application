@@ -46,11 +46,7 @@
 <div id="updateCustomerModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form
-        name="updateCustomerForm"
-        #updateCustomerForm="ngForm"
-        (ngSubmit)="updateCustomer(updateCustomerForm)"
-      >
+      <form name="updateCustomerForm" #updateCustomerForm="ngForm">
         <div class="modal-header">
           <h4 class="modal-title">Edit Customer</h4>
           <button
@@ -141,6 +137,8 @@
             type="submit"
             class="btn btn-info"
             [disabled]="!updateCustomerForm.valid"
+            data-dismiss="modal"
+            (click)="updateCustomer(updateCustomerForm)"
             value="Save"
           />
         </div>
@@ -153,7 +151,7 @@
   <input type="hidden" id="delete-id" />
   <div class="modal-dialog">
     <div class="modal-content">
-      <form (submit)="deleteCustomer()">
+      <form>
         <div class="modal-header">
           <h4 class="modal-title">Delete Customer</h4>
           <button
@@ -178,7 +176,13 @@
             data-dismiss="modal"
             value="Cancel"
           />
-          <input type="submit" class="btn btn-danger" value="Delete" />
+          <input
+            type="submit"
+            class="btn btn-danger"
+            data-dismiss="modal"
+            (click)="deleteCustomer()"
+            value="Delete"
+          />
         </div>
       </form>
     </div>

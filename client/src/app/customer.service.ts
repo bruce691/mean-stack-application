@@ -1,16 +1,11 @@
 import { Customer } from "./customer.model";
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { retry, catchError } from "rxjs/operators";
-//import "rxjs/add/operator/map";
-//import "rxjs/add/operator/toPromise";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: "root"
 })
 export class CustomerService {
-  selectedCustomer: Customer;
   customers: Customer[];
 
   readonly APIUrl = "http://localhost:3000/Customers";
