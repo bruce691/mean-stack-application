@@ -8,41 +8,19 @@ import { Customer } from "../customer.model";
   styleUrls: ["./list-customer.component.css"]
 })
 export class ListCustomerComponent implements OnInit {
+  deletedCustomerId: string;
+  counter: string;
+  customers: Customer[];
   constructor(private customerService: CustomerService) {}
 
   ngOnInit() {
     this.GetCustomersFromService();
   }
 
-  deletedCustomerId: string;
-
-  customers: Customer[];
-  customerDetail: Customer = {
-    _id: "",
-    first_name: "",
-    last_name: "",
-    gender: "",
-    age: null,
-    email: ""
-  };
-
   GetCustomersFromService() {
     this.customerService.GetCustomerList().subscribe(resp => {
       this.customers = resp as Customer[];
-    });
-  }
-
-  updateCustomer(updateCustomerForm) {
-    this.customerService
-      .PutCustomer(updateCustomerForm.value)
-      .subscribe(resp => {
-        this.GetCustomersFromService();
-      });
-  }
-
-  displayUpdateForm(custid) {
-    this.customerDetail = this.customers.find(c => {
-      return c._id === custid;
+      this.counter = `Showing ${this.customers.length} Customers.`;
     });
   }
 

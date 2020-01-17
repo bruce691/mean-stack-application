@@ -18,8 +18,7 @@
       <td>{{ customer.email }}</td>
       <td>
         <a
-          href="#updateCustomerModal"
-          (click)="displayUpdateForm(customer._id)"
+          [routerLink]="['/edit', customer._id]"
           class="edit"
           data-toggle="modal"
           ><i class="material-icons" data-toggle="tooltip" title="Edit"
@@ -40,7 +39,7 @@
   </tbody>
 </table>
 <div class="clearfix">
-  <div id="counter" class="hint-text"></div>
+<div id="counter" class="hint-text">{{counter}}</div>
 </div>
 <!-- Delete Modal HTML -->
 <div id="deleteCustomerModal" class="modal fade">
