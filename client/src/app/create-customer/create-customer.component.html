@@ -1,3 +1,96 @@
-<p>
-  create-customer works!
-</p>
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>Customer <b>Store</b></h2>
+        </div>
+        <div class="col-sm-6"></div>
+      </div>
+    </div>
+    <!-- Add Modal HTML -->
+    <div id="addCustomerModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="addCustForm" #addCustomerForm="ngForm">
+            <div class="modal-header">
+              <h4 class="modal-title">Add Customer</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>First Name</label>
+                <input
+                  type="text"
+                  name="first_name"
+                  #first_name="ngModel"
+                  [(ngModel)]="customerDetail.first_name"
+                  placeholder="Enter First Name"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  name="last_name"
+                  #last_name="ngModel"
+                  [(ngModel)]="customerDetail.last_name"
+                  placeholder="Enter Last Name"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Gender</label>
+                <input
+                  type="text"
+                  name="gender"
+                  #gender="ngModel"
+                  [(ngModel)]="customerDetail.gender"
+                  placeholder="Enter Gender"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Age</label>
+                <input
+                  type="text"
+                  name="age"
+                  #age="ngModel"
+                  [(ngModel)]="customerDetail.age"
+                  placeholder="Enter Age"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  #email="ngModel"
+                  [(ngModel)]="customerDetail.email"
+                  placeholder="Enter Email"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input
+                type="submit"
+                class="btn btn-success"
+                data-dismiss="modal"
+                [disabled]="!addCustomerForm.valid"
+                (click)="addCustomer(addCustomerForm)"
+                value="Add"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
