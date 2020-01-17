@@ -20,6 +20,10 @@ export class CustomerService {
     return this.http.get(this.APIUrl);
   }
 
+  GetCustomerById(id: string) {
+    return this.http.get(this.APIUrl + `/${id}`);
+  }
+
   PutCustomer(cust: Customer) {
     return this.http.put(this.APIUrl + `/${cust._id}`, cust);
   }
