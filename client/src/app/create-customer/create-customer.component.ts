@@ -16,14 +16,21 @@ export class CreateCustomerComponent implements OnInit {
     age: null,
     email: ""
   };
-  router: Router;
-  constructor(private customerService: CustomerService) {}
+
+  constructor(
+    private customerService: CustomerService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
 
   addCustomer(addCustomerForm) {
     this.customerService.PostCustomer(addCustomerForm.value).subscribe(resp => {
-      //this.router.navigate("");
+      this.router.navigate([""]);
     });
+  }
+
+  backToHome() {
+    this.router.navigate([""]);
   }
 }

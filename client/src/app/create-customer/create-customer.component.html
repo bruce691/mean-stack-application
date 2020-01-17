@@ -80,9 +80,14 @@
             </div>
             <div class="modal-footer">
               <input
+              type="button"
+              (click)="backToHome()"
+              class="btn btn-default"
+              value="Cancel"
+            />
+              <input
                 type="submit"
                 class="btn btn-success"
-                data-dismiss="modal"
                 [disabled]="!addCustomerForm.valid"
                 (click)="addCustomer(addCustomerForm)"
                 value="Add"
