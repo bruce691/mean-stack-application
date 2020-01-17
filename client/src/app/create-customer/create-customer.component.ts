@@ -1,6 +1,6 @@
 import { CustomerService } from "./../customer.service";
 import { Component, OnInit } from "@angular/core";
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 import { Customer } from "../customer.model";
 @Component({
   selector: "app-create-customer",
@@ -16,17 +16,14 @@ export class CreateCustomerComponent implements OnInit {
     age: null,
     email: ""
   };
-router : Router;
+  router: Router;
   constructor(private customerService: CustomerService) {}
 
   ngOnInit() {}
 
   addCustomer(addCustomerForm) {
-    this.customerService
-      .PostCustomer(addCustomerForm.value)
-      .subscribe(resp => {
-        console.log("adding customer...");
-        //this.router.navigate("");
-      });
+    this.customerService.PostCustomer(addCustomerForm.value).subscribe(resp => {
+      //this.router.navigate("");
+    });
   }
 }
