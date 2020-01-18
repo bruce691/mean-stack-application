@@ -1,6 +1,6 @@
-import { CustomerService } from "./../customer.service";
+import { CustomerService } from "../shared/customer.service";
 import { Component, OnInit } from "@angular/core";
-import { Customer } from "../customer.model";
+import { Customer } from "../shared/customer.model";
 
 @Component({
   selector: "app-navbar",

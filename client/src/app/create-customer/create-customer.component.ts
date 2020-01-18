@@ -1,7 +1,7 @@
-import { CustomerService } from "./../customer.service";
+import { CustomerService } from "../shared/customer.service";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Customer } from "../customer.model";
+import { Customer } from "../shared/customer.model";
 @Component({
   selector: "app-create-customer",
   templateUrl: "./create-customer.component.html",
