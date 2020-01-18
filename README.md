@@ -1,26 +1,61 @@
-# Client
+# Mean Stack - Customer Store App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+This Customer Store is a very basic Mean Stack application developed using MongoDB, Express, Angular and Node.js to show CRUD operations on MongoDB using RestAPI.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- In order to run this app, you need Node.js, which is javascript runtime installed on our machine.
+  So download and install the latest Node.js available from this [link](https://nodejs.org/en/).
 
-## Code scaffolding
+- we also need to have MongoDB installed on the machine. You can download and install MongoDB community edition free from this [link](https://www.mongodb.com/download-center/community).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+Clone or Download the zip file of this repository.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Setup & Run WebAPI server
 
-## Running unit tests
+Open the command window in the folder where you have unzip the mean-stack-application repository code and move to webapi folder.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+cd webapi
+```
 
-## Running end-to-end tests
+Now run following command to install all the package dependencies.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+node install
+```
+
+Run the following command to run the webapi server in the command window.
+
+```
+node index.js
+```
+
+> WebAPI server will listen at URL - `http://localhost:3000/Customers`
+
+### Setup & Run Client application
+
+Now move to client folder.
+
+```
+cd client
+```
+
+Run following command to start the client application.
+
+```
+ng serve
+```
+
+> Navigate to `http://localhost:4200/`to access the client application.
+
+## Built With
+
+- [Node.js v10.15.1](https://nodejs.org/en/) - The .Net Core framework used
+- [Angular CLI v7.3.1](https://cli.angular.io/) - This project was generated with
+- [VS Code](https://code.visualstudio.com/download) - The Code editor used
 
 ## Further help
 
