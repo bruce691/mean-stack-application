@@ -7,7 +7,6 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { NavbarComponent } from "./navbar/navbar.component";
-import { CustomersComponent } from "./customers/customers.component";
 import { CustomerService } from "./customer.service";
 import { CreateCustomerComponent } from "./create-customer/create-customer.component";
 import { EditCustomerComponent } from "./edit-customer/edit-customer.component";
@@ -18,7 +17,6 @@ import { ListCustomerComponent } from "./list-customer/list-customer.component";
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    CustomersComponent,
     CreateCustomerComponent,
     EditCustomerComponent,
     ListCustomerComponent
