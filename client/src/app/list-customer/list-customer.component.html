@@ -1,4 +1,16 @@
-<table class="table table-striped table-hover w-auto">
+<div
+  [hidden]="this.customers.length !== 0"
+  class="alert alert-success"
+  role="alert"
+>
+  There are no customers. Please
+  <a [routerLink]="['new']" class="alert-link">add new customer</a> in the
+  store.
+</div>
+<table
+  [hidden]="this.customers.length == 0"
+  class="table table-striped table-hover w-auto"
+>
   <thead>
     <tr>
       <th>First Name</th>
@@ -38,8 +50,8 @@
     </tr>
   </tbody>
 </table>
-<div class="clearfix">
-<div id="counter" class="hint-text">{{counter}}</div>
+<div [hidden]="this.customers.length == 0" class="clearfix">
+  <div id="counter" class="hint-text">{{ counter }}</div>
 </div>
 <!-- Delete Modal HTML -->
 <div id="deleteCustomerModal" class="modal fade">
