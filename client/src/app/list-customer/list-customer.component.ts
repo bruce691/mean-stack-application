@@ -11,7 +11,9 @@ export class ListCustomerComponent implements OnInit {
   deletedCustomerId: string;
   counter: string;
   customers: Customer[];
-  constructor(private customerService: CustomerService) {}
+  constructor(private customerService: CustomerService) {
+    this.customers = [];
+  }
 
   ngOnInit() {
     this.GetCustomersFromService();
