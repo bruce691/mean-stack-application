@@ -24,7 +24,7 @@ cd webapi
 Now run following command to install all the package dependencies.
 
 ```
-node install
+npm install
 ```
 
 Run the following command to run the webapi server in the command window.
@@ -41,6 +41,12 @@ Now move to client folder.
 
 ```
 cd client
+```
+
+Now run following command to install all the package dependencies for client.
+
+```
+npm install
 ```
 
 Run following command to start the client application.
