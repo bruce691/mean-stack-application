@@ -2,7 +2,7 @@
  * for express web api server
  */
 const bodyParser = require('body-parser');
-const { mongoose } = require('./db');
+require('./db');
 const customer = require('./Controller/CustomerController');
 const cors = require('cors');
 
