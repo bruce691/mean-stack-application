@@ -4,9 +4,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 const conString = process.env.DB_CONNECTION;
-console.log(conString);
 // const conString = "mongodb://localhost:27017/customerDb";
-// const conString =  "mongodb+srv://admin:Admin678@cluster0-iqrdy.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(
   conString,
   { useNewUrlParser: true, useUnifiedTopology: true },
