@@ -17,13 +17,9 @@ OR
 
 Clone or Download the zip file of this repository.
 
-### Setup & Run WebAPI server
+### Setup server
 
-Open the command window in the folder where you have unzip the mean-stack-application repository code and move to webapi folder.
-
-```
-cd webapi
-```
+Open the command window in the folder where you have unzip the mean-stack-application repository.
 
 Create **.env** file in it and add following code in the file in case you are using local MongoDB.
 
@@ -37,15 +33,7 @@ Now run following command to install all the package dependencies.
 npm install
 ```
 
-Run the following command to run the webapi server in the command window.
-
-```
-npm start
-```
-
-> WebAPI server will listen at URL - `http://localhost:3000/Customers`
-
-### Setup & Run Client application
+### Setup Client application
 
 Now move to client folder.
 
@@ -59,12 +47,15 @@ Now run following command to install all the package dependencies for client.
 npm install
 ```
 
-Run following command to start the client application.
+### Run Client & Server
+
+Run following command to start the client application and server concurrently.
 
 ```
-npm start
+npm run dev
 ```
 
+> Server will listen at URL - `http://localhost:3000/Customers`
 > Navigate to `http://localhost:4200/`to access the client application.
 
 ## Built With
