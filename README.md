@@ -40,7 +40,7 @@ npm install
 Run the following command to run the webapi server in the command window.
 
 ```
-node index.js
+npm start
 ```
 
 > WebAPI server will listen at URL - `http://localhost:3000/Customers`
@@ -62,7 +62,7 @@ npm install
 Run following command to start the client application.
 
 ```
-ng serve
+npm start
 ```
 
 > Navigate to `http://localhost:4200/`to access the client application.
