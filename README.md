@@ -9,6 +9,10 @@ This Customer Store is a very basic Mean Stack application developed using Mongo
 
 - we also need to have MongoDB installed on the machine. You can download and install MongoDB community edition free from this [link](https://www.mongodb.com/download-center/community).
 
+OR
+
+- if you dont want to install MongoDB on your machine then you can use cloud hosted MongoDB service from this [link](https://cloud.mongodb.com/user#/atlas/login). Ypu have to create account and use free tier to host your data.
+
 ## Getting Started
 
 Clone or Download the zip file of this repository.
@@ -20,6 +24,12 @@ Open the command window in the folder where you have unzip the mean-stack-applic
 ```
 cd webapi
 ```
+
+Create **.env** file in it and add following code in the file in case you are using local MongoDB.
+
+`DB_CONNECTION=mongodb://localhost:27017/customerDb`
+
+Otherwise, if you are using cloud based MongoDB service then you the connection string you get from there instead of local one.
 
 Now run following command to install all the package dependencies.
 
