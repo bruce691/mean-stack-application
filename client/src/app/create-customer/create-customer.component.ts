@@ -8,19 +8,20 @@ import { Customer } from "../shared/customer.model";
   styleUrls: ["./create-customer.component.css"]
 })
 export class CreateCustomerComponent implements OnInit {
-  customerDetail: Customer = {
-    _id: "",
-    first_name: "",
-    last_name: "",
-    gender: "",
-    age: null,
-    email: ""
-  };
-
+  customerDetail: Customer;
   constructor(
     private customerService: CustomerService,
     private router: Router
-  ) {}
+  ) {
+    this.customerDetail = {
+      _id: "",
+      first_name: "",
+      last_name: "",
+      gender: "",
+      age: null,
+      email: ""
+    };
+  }
 
   ngOnInit() {}
 

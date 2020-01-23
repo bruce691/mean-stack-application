@@ -10,19 +10,21 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class EditCustomerComponent implements OnInit {
   customerId: string;
-  customerDetail: Customer = {
-    _id: "",
-    first_name: "",
-    last_name: "",
-    gender: "",
-    age: null,
-    email: ""
-  };
+  customerDetail: Customer;
   constructor(
     private customerService: CustomerService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+    this.customerDetail = {
+      _id: "",
+      first_name: "",
+      last_name: "",
+      gender: "",
+      age: null,
+      email: ""
+    };
+  }
 
   ngOnInit() {
     this.GetCustomerFromService(this.route.snapshot.paramMap.get("id"));
