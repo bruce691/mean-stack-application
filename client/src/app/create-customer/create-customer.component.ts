@@ -7,7 +7,7 @@ import { Customer } from "../shared/customer.model";
   templateUrl: "./create-customer.component.html",
   styleUrls: ["./create-customer.component.css"]
 })
-export class CreateCustomerComponent implements OnInit {
+export class CreateCustomerComponent {
   customerDetail: Customer;
   constructor(
     private customerService: CustomerService,
@@ -22,8 +22,6 @@ export class CreateCustomerComponent implements OnInit {
       email: ""
     };
   }
-
-  ngOnInit() {}
 
   addCustomer(addCustomerForm) {
     this.customerService.PostCustomer(addCustomerForm.value).subscribe(resp => {

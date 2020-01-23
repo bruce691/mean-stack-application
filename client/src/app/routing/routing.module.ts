@@ -1,5 +1,4 @@
 import { HomeComponent } from "./../home/home.component";
-import { ListCustomerComponent } from "./../list-customer/list-customer.component";
 import { EditCustomerComponent } from "./../edit-customer/edit-customer.component";
 import { CreateCustomerComponent } from "./../create-customer/create-customer.component";
 import { NgModule } from "@angular/core";

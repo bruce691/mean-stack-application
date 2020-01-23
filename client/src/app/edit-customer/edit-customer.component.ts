@@ -9,7 +9,6 @@ import { Router, ActivatedRoute } from "@angular/router";
   styleUrls: ["./edit-customer.component.css"]
 })
 export class EditCustomerComponent implements OnInit {
-  customerId: string;
   customerDetail: Customer;
   constructor(
     private customerService: CustomerService,

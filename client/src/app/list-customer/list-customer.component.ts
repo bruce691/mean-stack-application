@@ -22,7 +22,7 @@ export class ListCustomerComponent implements OnInit {
   GetCustomersFromService() {
     this.customerService.GetCustomerList().subscribe(resp => {
       this.customers = resp as Customer[];
-      this.counter = `Showing ${this.customers.length} Customers.`;
+      this.counter = `Showing ${this.customers.length} Customers...`;
     });
   }
 
