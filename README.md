@@ -21,7 +21,7 @@ Clone or Download the zip file of this repository.
 
 Open the command window in the folder where you have unzip the mean-stack-application repository.
 
-Create **.env** file in it and add following code in the file in case you are using local MongoDB.
+Rename **.env_example** file to **.env** and add following code in the file in case you are using local MongoDB.
 
 `DB_CONNECTION=mongodb://localhost:27017/customerDb`
 
