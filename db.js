@@ -3,12 +3,13 @@
  */
 const mongoose = require('mongoose');
 require('dotenv').config();
-const conString = process.env.DB_CONNECTION;
-// const conString = "mongodb://localhost:27017/customerDb";
+//const conString = process.env.DB_CONNECTION;
+//const conString = 'mongodb://localhost:27017/customerDb';
+const conString = 'mongodb://mongo-db:27017/customerDb';
 mongoose.connect(
   conString,
   { useNewUrlParser: true, useUnifiedTopology: true },
-  err => {
+  (err) => {
     if (!err) console.log('Successfully connect to MondoDB...');
     else
       console.log(

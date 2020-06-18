@@ -3,12 +3,12 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class CustomerService {
   customers: Customer[];
 
-  readonly APIUrl = "http://localhost:3000/Customers";
+  readonly APIUrl = "http://192.168.99.100:3000/Customers";
 
   constructor(private http: HttpClient) {}
 
