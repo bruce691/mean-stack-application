@@ -58,6 +58,10 @@ npm run dev
 > Server will listen at URL - `http://localhost:3000/Customers`
 > Navigate to `http://localhost:4200/`to access the client application.
 
+## Docker Support
+
+Docker image of this app is available at my docker Hub registory. You can pull the image from [angular-app](https://hub.docker.com/repository/docker/sanjaysaini2000/meanstack_frontend) repository.
+
 ## Built With
 
 - [Node.js v10.15.1](https://nodejs.org/en/) - The .Net Core framework used
