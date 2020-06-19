@@ -60,7 +60,7 @@ npm run dev
 
 ## Docker Support
 
-Docker image of this app is available at my docker Hub registory. You can pull the image from [angular-app](https://hub.docker.com/repository/docker/sanjaysaini2000/meanstack_frontend) repository.
+Docker image of this app is available at my docker Hub registory. You can pull the image from [meanstack-app](https://hub.docker.com/repository/docker/sanjaysaini2000/meanstack_frontend) repository.
 
 ## Built With
 
